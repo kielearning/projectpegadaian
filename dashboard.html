@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Absensi Pegadaian</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="pegadaian.png" alt="Logo">
+      <h2>Pegadaian</h2>
+    </div>
+    <nav class="menu">
+      <a href="#" class="active" data-section="beranda"><i class="fa fa-home"></i> Beranda</a>
+      <a href="#" data-section="absensi"><i class="fa fa-user-check"></i> Absensi Kehadiran</a>
+      <a href="#" data-section="rekap"><i class="fa fa-table"></i> Rekap Absensi</a>
+      <a href="#" data-section="pengumuman"><i class="fa fa-bullhorn"></i> Pengumuman</a>
+    </nav>
+  </aside>
+
+  <!-- Konten -->
+  <div class="main-content">
+    <header class="topbar">
+      <h1 id="section-title">Beranda</h1>
+      <div class="user-info">
+        <img src="https://i.pravatar.cc/40" alt="User">
+        <span id="usernameDisplay">Halo, Pegawai!</span>
+      </div>
+    </header>
+
+    <!-- Beranda -->
+    <section id="beranda" class="section active-section">
+      <div class="welcome-card">
+        <h2>Selamat Datang di Dashboard Absensi Pegadaian</h2>
+        <p>Gunakan menu di sebelah kiri untuk mengelola absensi.</p>
+      </div>
+      <!-- Tambahkan kalender di bawahnya -->
+      <div class="card">
+        <h2>Kalender</h2>
+        <div id="calendar-container"></div>
+      </div>
+    </section>
+
+    <!-- Form Absensi -->
+    <section id="absensi" class="section">
+      <div class="card">
+        <h2>Form Absensi Kehadiran</h2>
+        <form id="form-absensi">
+          <label>Tanggal</label>
+          <input type="date" name="tanggal" required>
+          <label>Status Kehadiran</label>
+          <select name="status" required>
+            <option value="">Pilih Status</option>
+            <option value="Hadir">Hadir</option>
+            <option value="Sakit">Sakit</option>
+            <option value="Izin">Izin</option>
+          </select>
+          <button type="submit">Simpan</button>
+        </form>
+        <div class="result" id="result-absensi"></div>
+      </div>
+    </section>
+
+    <!-- Rekap Absensi -->
+    <section id="rekap" class="section">
+      <div class="card">
+        <h2>Rekap Absensi</h2>
+        <button onclick="exportCSV(absensiList, ['Tanggal','Status'],'absensi.csv')">Export CSV</button>
+        <table id="tabel-absen">
+          <thead>
+            <tr><th>Tanggal</th><th>Status</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Pengumuman -->
+    <section id="pengumuman" class="section">
+      <div class="card">
+        <h2>Pengumuman</h2>
+        <ul id="pengumuman-list"></ul>
+      </div>
+    </section>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

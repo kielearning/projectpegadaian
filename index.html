@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Pegadaian</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="login-box">
+    <div class="logo-section">
+      <img src="pegadaian.png" alt="Logo Pegadaian" class="logo">
+      <h1>Solusi Masalah Tanpa Masalah</h1>
+    </div>
+
+    <form class="login-form" id="loginForm">
+      <p>Masukkan Username & Password</p>
+      <div class="input-group">
+        <input type="text" id="user-id" name="user-id" placeholder="User ID" required>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Password" required>
+      </div>
+
+      <div class="show-password">
+        <input type="checkbox" id="show-password">
+        <label for="show-password">Tampilkan Password</label>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+      <a href="#" class="forgot-password">Lupa Password Anda?</a>
+    </form>
+  </div>
+
+  <script>
+    // tampilkan password
+    const password = document.getElementById('password');
+    const showPassword = document.getElementById('show-password');
+    showPassword.addEventListener('change', () => {
+      password.type = showPassword.checked ? 'text' : 'password';
+    });
+
+    // login
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const user = document.getElementById('user-id').value;
+      const pass = document.getElementById('password').value;
+
+      // login dummy
+      if (user === 'Nurul' && pass === '1234') {
+        localStorage.setItem('username', user); // simpan username
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('User ID atau Password salah');
+      }
+    });
+  </script>
+</body>
+</html>
