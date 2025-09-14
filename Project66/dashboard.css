@@ -1,0 +1,178 @@
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  text-align: center;
+  padding: 20px;
+}
+.sidebar-header img {
+  width: 50px;
+}
+.sidebar-header h2 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.menu {
+  flex: 1;
+}
+.menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #000000;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.menu a:hover, .menu a.active {
+  background: #008C4A;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Topbar */
+.topbar {
+  background: #00A651;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.user-info img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Section */
+.section {
+  display: none;
+  padding: 20px;
+}
+.active-section {
+  display: block;
+}
+
+/* Cards */
+.card, .welcome-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+form label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+form input, form select {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form button {
+  margin-top: 15px;
+  padding: 10px;
+  background: #00A651;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+form button:hover {
+  background: #008C4A;
+}
+
+.result {
+  margin-top: 10px;
+  padding: 10px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #00A651;
+  display: none;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+table th {
+  background: #00A651;
+  color: #fff;
+}
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+/* Tambahkan di bawah style yang sudah ada */
+
+/* Kalender */
+#calendar-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 10px;
+}
+#calendar-container div {
+  padding: 10px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+#calendar-container .header {
+  font-weight: bold;
+  background: #00A651;
+  color: #fff;
+}
+
+/* Pengumuman */
+#pengumuman-list {
+  list-style: none;
+  margin-top: 10px;
+}
+#pengumuman-list li {
+  padding: 10px;
+  border-left: 4px solid #00A651;
+  background: #e8f5e9;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
